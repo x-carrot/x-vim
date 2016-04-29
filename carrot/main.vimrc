@@ -8,10 +8,6 @@
 "        Xzj        2016-04-14 10:00      V1.0.0                build         *
 "                                                                             *
 " ****************************************************************************/
-#ifndef .vimrc_
-#define .vimrc_
-
-#endif // .vimrc_
 
 " ----------------------------------------------------------------------------
 " ===<  检测运行环境  >===
@@ -55,7 +51,7 @@ source ~/.vim/carrot/carrot.vim
 "map <C-F> :call xzj_fileheader()<cr>
 function Xzj_fileheader()
 	call append(0,"/******************************************************************************")
-	call append(1,"*    Copyright (C), ".strftime("%Y")." by Carrot tech. All rights reserved.          *")
+	call append(1,"*    Copyright (C), ".strftime("%Y")." by Carrot tech. All rights reserved.                    *")
 	call append(2,"*    Filename:       ".expand("%:t"))
 	call append(3,"*    Author:         zhengjian.xie@gmail.com                                  *")
 	call append(4,"*    Description:                                                             *")
