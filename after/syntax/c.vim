@@ -11,6 +11,6 @@
 
 " ----------------------------------------------------------------------------
 " 高亮运算符等 cSyntaxAfter
-if exists("*CSyntaxAfter") call CSyntaxAfter() endif
-syntax match longOperators "++\|--"
-hi longOperators guifg=green guibg=red
+"if exists("*CSyntaxAfter") call CSyntaxAfter() endif
+"syntax match longOperators "++\|--"
+"hi longOperators guifg=green guibg=red
