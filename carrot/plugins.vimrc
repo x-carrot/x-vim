@@ -27,9 +27,14 @@ Plugin 'jiangmiao/auto-pairs'        " auto-pairs, 自动补全()/{}/''等
 Plugin 'cSyntaxAfter'                " csyntaxAfter, 高亮运算符与括号等
 Plugin 'Yggdroot/indentLine'         " indentLine, 缩进显示，代码风格更好看
 Plugin 'DoxygenToolkit.vim'          " doxygen 注释代码工具
+Plugin 'a.vim'                       " C / H
+Plugin 'Shougo/neocomplete.vim'      " auto complete
 
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'     " markdown syntax highlight
+
+Plugin 'OmniCppComplete'             " c/c++ auto complete
+Plugin 'SuperTab'                    " 
 
 call vundle#end()                        " 必须
 filetype plugin indent on                " 必须,加载vim自带文件类型语法检测

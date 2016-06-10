@@ -47,3 +47,6 @@ source ~/.vim/carrot/ccpp.vimrc
 source ~/.vim/carrot/java.vimrc
 source ~/.vim/carrot/php.vimrc
 source ~/.vim/carrot/carrot.vim
+
+syntax enable                       " 开启语法高亮
+syntax on

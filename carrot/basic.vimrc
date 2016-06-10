@@ -1,3 +1,13 @@
+" *****************************************************************************
+"    Copyright (C), 2016 by Carrot tech. All rights reserved.                 *
+"    Filename:       basic.vimrc
+"    Author:         zhengjian.xie@gmail.com                                  *
+"    Description:                                                             *
+"    History:                                                                 *
+"      <author>          <time>          <version>          <description>     *
+"        Xzj        2016-05-12 21:21      V1.0.0                build         *
+"                                                                             *
+" ****************************************************************************/
 set nocompatible                               " 关闭Vim与Vi的兼容，反之: set compatible
 set nobackup                                   " 去掉备份
 set encoding=utf-8                             " 文件编码为utf8
@@ -38,6 +48,28 @@ set foldmethod=syntax                          " 启动时不要自动折叠代�
 set foldlevel=100                              " 依标记折叠
 
 " -----------------------------------------------------------------------------
+" ===<  ctags  >===
+" *** 标签文件生成 ***
+" -----------------------------------------------------------------------------
+map <C-B> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=tools --exclude=output
+set tags=tags
+set tags+=./tags
+
+" -----------------------------------------------------------------------------
+" ===<  cscope  >===
+" -----------------------------------------------------------------------------
+"map <C-F11> :!cscope -Rbq 
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-_>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+" -----------------------------------------------------------------------------
 " ===<  plugin: nerdtree  >===
 " *** 文件列表管理器 ***
 " -----------------------------------------------------------------------------
@@ -54,11 +86,6 @@ let g:miniBufExplMapCTabSwitchBufs = 1         " C-tab,C-shift-tab键切换buf
 let g:miniBufExplMapWindowNavVim = 1           " C-h,j,k,l切换窗口焦点
 let g:miniBufExplMapWindowNavArrows = 1        " C-箭头,切换窗口焦点
 let g:miniBufExplModSelTarget = 1              " 
-
-" -----------------------------------------------------------------------------
-" ===< ctags & cscope  >===
-" -----------------------------------------------------------------------------
-set tags=tags
 
 " -----------------------------------------------------------------------------
 " ===<  plugin: taglist  >===
@@ -111,6 +138,28 @@ let g:DoxygenToolkit_authorName="zhengjian.xie@gmail.com"
 let g:DoxygenToolkit_licenseTag="Copyright (C) by x-Carrot tech. All rights reserved."
 
 " -----------------------------------------------------------------------------
+" ===<  plugin: neocomplete >===
+" *** auto complete tool ***
+" -----------------------------------------------------------------------------
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1        " Use neocomplete.
+let g:neocomplete#enable_smart_case = 1        " Use smartcase.
+let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length.
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+if !exists('g:neocomplete#keyword_patterns')   " Define keyword.
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" -----------------------------------------------------------------------------
 " ===<  plugin: vim-markdown & tabular >===
 " *** markdown 语法高亮 ***
 " -----------------------------------------------------------------------------
@@ -122,3 +171,23 @@ let g:vim_markdown_toc_autofit = 1             " 允许toc自动适应
 let g:vim_markdown_emphasis_multiline = 0      " 强制一行显示
 let g:vim_markdown_conceal = 0                 " 使用vim自带conceal
 let g:vim_markdown_math = 1                    " LaTeX math
+
+" -----------------------------------------------------------------------------
+" ===<  plugin: super tab & omnicppcomplete >===
+" *** tab 与 c / c++ auto complete ***
+" -----------------------------------------------------------------------------
+set nocp
+"set completeopt=menu,menuone                  " 关掉智能补全时的预览窗口
+let OmniCpp_MayCompleteDot = 1                 " autocomplete with .
+let OmniCpp_MayCompleteArrow = 1               " autocomplete with ->
+let OmniCpp_MayCompleteScope = 1               " autocomplete with ::
+let OmniCpp_SelectFirstItem = 2                " select first item (but don't insert)
+let OmniCpp_NamespaceSearch = 2                " search namespaces in this and included files
+let OmniCpp_ShowPrototypeInAbbr = 1            " show function prototype in popup window
+let OmniCpp_GlobalScopeSearch = 1              " enable the global scope search
+let OmniCpp_DisplayMode = 1                    " Class scope completion mode: always show all members
+"let OmniCpp_DefaultNamespaces=["std"]
+let OmniCpp_ShowScopeInAbbr = 1                " show scope in abbreviation and remove the last column
+let OmniCpp_ShowAccess = 1
+let g:SuperTabRetainCompletionType = 2
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
