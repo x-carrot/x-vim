@@ -15,6 +15,8 @@ syn match xzjFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
 syn match xzjFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*) ("me=e-3
 syn match xzjFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
 syn keyword xzjFunctions xProc
+
+syn keyword cType __xline__ __xfunc__ __wfunc__ __xfile__ __wfile__
 syn match xzjType "\<st[A-Z][a-zA-Z_0-9]*"
 syn match xzjType "\<pst[A-Z][a-zA-Z_0-9]*"
 syn match xzjType "\<em[A-Z][a-zA-Z_0-9]*"
@@ -52,7 +54,6 @@ hi xzjType			guifg=lightblue gui=underline,italic
 hi xzjOS			guifg=#ffa0a0 gui=bold
 hi xzjEnum                      guifg=lightgreen gui=bold
 
-hi def link cType xzjType
 hi def link xzjpType xzjType
 hi def link xzjGlibType xzjType
 hi def link xzjThreadType xzjType

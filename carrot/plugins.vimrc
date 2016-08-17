@@ -34,7 +34,9 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'     " markdown syntax highlight
 
 Plugin 'OmniCppComplete'             " c/c++ auto complete
-Plugin 'SuperTab'                    " 
+Plugin 'SuperTab'                    " auto complete when TAB pressed
 
-call vundle#end()                        " 必须
-filetype plugin indent on                " 必须,加载vim自带文件类型语法检测
+Plugin 'othree/html5.vim'            " html5 omnicomplete + syntax + indent
+
+call vundle#end()                    " 必须
+filetype plugin indent on            " 必须,加载vim自带文件类型语法检测

@@ -13,7 +13,7 @@ augroup end
 "map <C-F> :call xzj_fileheader()<cr>
 function Xzj_fileheader()
 	call append(0,"/******************************************************************************")
-	call append(1,"*    Copyright (C), ".strftime("%Y")." by Carrot tech. All rights reserved.                 *")
+	call append(1,"*    Copyright (C), ".strftime("%Y")." by CarrotX tech. All rights reserved.                 *")
 	call append(2,"*    Filename:       ".expand("%:t"))
 	call append(3,"*    Author:         zhengjian.xie@gmail.com                                  *")
 	call append(4,"*    Description:                                                             *")
