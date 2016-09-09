@@ -10,12 +10,13 @@
 " ****************************************************************************/
 
 " some mix keyword for myself use
+" -------------------------------------------------------------------
 syn keyword cppType x_space T T1 T2 iterator
 
 " c++ highlight
 " -------------------------------------------------------------------
 syn keyword xzjClass	interface handler listener observer notifier receiver
-syn keyword xzjSTL	std npos endl vector list map stack string wstring fstream
+syn keyword xzjSTLType	std npos endl vector list map stack string wstring fstream
 syn keyword xzjSTLFunc  cout cin
 
 syn keyword xzjProtocol _protocal _endprotocal _optional _required _confirmto _implement
@@ -35,7 +36,7 @@ syn match xzjTinyxml "\<Ti[A-Z][a-zA-Z_0-9]*"
 " -------------------------------------------------------------------
 hi xzjClass guifg=lightblue gui=bold,underline,italic
 
-hi def link xzjSTL xzjType
+hi def link xzjSTLType xzjType
 hi def link xzjSTLFunc xzjFunctions
 hi def link xzjProtocol cppType
 
