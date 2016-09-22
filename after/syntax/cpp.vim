@@ -27,6 +27,7 @@ syn keyword xzjQAccess slots signals
 syn keyword xzjQMacro Q_OBJECT
 
 syn match xzjClass "\<db[A-Z][a-zA-Z_0-9]*"
+syn match xzjClass "\<dae[A-Z][a-zA-Z_0-9]*"
 syn match xzjClass "\<x[A-Z][a-zA-Z_0-9]*"
 syn match xzjClass "\<xcl[A-Z][a-zA-Z_0-9]*"
 syn match xzjClass "\<UI[A-Z][a-zA-Z_0-9]*"

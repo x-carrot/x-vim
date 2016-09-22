@@ -27,15 +27,15 @@ syn match xzjType "\<pun[A-Z][a-zA-Z_0-9]*"
 
 syn match xzjEnum "\<k[A-Z][a-zA-Z_0-9]*"
 syn match xzjEnum "\<kem[A-Z][a-zA-Z_0-9]*"
-syn match xzjEnum "\<XENUM_[A-Z][a-zA-Z_0-9]*"
+syn match xzjEnum "\<XEM_[A-Z][a-zA-Z_0-9]*"
 syn match xzjDef  "\<XDEF_[A-Z][a-zA-Z_0-9]*"
 syn match xzjDef  "\<XMSG_[A-Z][a-zA-Z_0-9]*"
 syn match xzjDef  "\<MSG_[A-Z][a-zA-Z_0-9]*"
-syn match xzjDef  "\<kDef[A-Z][a-zA-Z_0-9]*"
+syn match xzjDef  "\<kdef[A-Z][a-zA-Z_0-9]*"
 syn keyword xzjDef X_E X_LN2 X_LN10 X_PI X_PI_2 X_PI_4 X_SQRT2 X_LOG2_BASE10
 syn keyword xzjDef X_MAXPATH X_MAXNAME X_MAXNAME2 X_MAXUINT16 X_MAXUINT32 X_MAXUINT64
 
-syn keyword xzjGlibType gboolean gpointer guchar gchar gint guint gsize 
+syn keyword xzjGlibType gboolean gpointer guchar gchar gint guint guint16 gsize 
 syn match xzjGlibType "\<G[A-Z][a-zA-Z_0-9]*"
 syn match xzjGlibType "\<GDBus[A-Z][a-zA-Z_0-9]*"
 syn match xzjGlibType "\<Gst[A-Z][a-zA-Z_0-9]*"
@@ -67,7 +67,7 @@ syn keyword xzjpType xpFloat xpDouble xpOffset xpSize_t
 hi xzjFunctions			guifg=#ffa0a0 gui=italic,bold
 hi xzjType              guifg=lightblue gui=underline,italic
 hi xzjOS			    guifg=#ffa0a0 gui=bold
-hi xzjEnum              guifg=lightgreen gui=bold
+hi xzjEnum              guifg=lightgreen gui=italic
 
 hi def link xzjpType xzjType
 hi def link xzjGlibType xzjType

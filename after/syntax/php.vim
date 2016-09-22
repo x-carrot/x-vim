@@ -19,9 +19,12 @@ syn match xzjFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1 containedin=phpReg
 
 syn match xzjClass "\<x[A-Z][a-zA-Z_0-9]*" containedin=phpRegion
 
+syn match xzjDef "\<kdef[A-Z][a-zA-Z_0-9]*" containedin=phpRegion
+syn match xzjDef "\<k[A-Z][a-zA-Z_0-9]*" containedin=phpRegion
 
 " keyword colors
 " -------------------------------------------------------------------
 hi phpFunctions			guifg=#ffa0a0 gui=underline,bold
 hi xzjFunctions         guifg=#ffa0a0 gui=italic,bold
 hi xzjClass             guifg=lightblue gui=bold,underline,italic
+hi xzjDef               guifg=darkyellow gui=italic
