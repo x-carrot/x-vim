@@ -19,7 +19,7 @@ syn keyword xzjClass	interface handler listener observer notifier receiver
 syn keyword xzjSTLType	std npos endl vector list map stack string wstring fstream
 syn keyword xzjSTLFunc  cout cin
 
-syn keyword xzjProtocol _protocol _endprotocol _optional _required _confirmto _implement
+syn keyword xzjProtocol _protocol _protocol2 _endprotocol _optional _required _confirmto _implement
 syn keyword xzjProtocol _confirmto_base _protocol_func _protocol_funcs _endprotocol_funcs
 
 syn match   xzjQClass  "\<Q[A-Z][a-zA-Z_0-9]*"
