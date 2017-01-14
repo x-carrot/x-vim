@@ -54,7 +54,7 @@ syn keyword xzjThreadType pthread_mutex_t
 
 syn keyword xzjBonjourType DNSServiceRef DNSServiceFlags DNSServiceProtocol DNSServiceErrorType
 
-syn keyword xzjOS OS_WIN OS_LINUX OS_APPLE X_EXPORT X_EXPORT_API
+syn keyword xzjOS OS_WIN OS_LINUX OS_APPLE X_EXPORT X_EXPORT_API X_PROXY_EXPORT X_PROXY_EXPORT_API
 syn keyword Boolean yes no nil
 syn keyword xzjType xVoid xChar xWChar xUChar xBool xByte xInt xUint xShort xUShort xLong xUlong xFloat xDouble
 syn keyword xzjType xInt8 xUint8 xInt16 xUint16 xInt32 xUint32 xInt64 xUint64 xOffset xSize_t
