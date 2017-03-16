@@ -31,8 +31,8 @@ endfunction
 " -----------------------------------------------------------------------------
 "map <C-H> :call Xzj_ifndef_file()<cr>
 function Xzj_ifndef_file()
-	call append(10,"#ifndef ".expand("%:t:r")."_".expand("%:e"))
-	call append(11,"#define ".expand("%:t:r")."_".expand("%:e"))
+	call append(10,"#ifndef __".expand("%:t:r")."_".expand("%:e")."__")
+	call append(11,"#define __".expand("%:t:r")."_".expand("%:e")."__")
 	call append(12,"")
-	call append(13,"#endif // ".expand("%:t:r")."_".expand("%:e"))
+	call append(13,"#endif // __".expand("%:t:r")."_".expand("%:e")."__")
 endfunction
